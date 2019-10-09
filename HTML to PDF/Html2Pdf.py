@@ -1,5 +1,8 @@
 from xhtml2pdf import pisa             # import python module
 
+# A2 = 16:9
+# A3 = 4:3
+#
 # Define your data
 
 path_html = open("index.html", "r") 

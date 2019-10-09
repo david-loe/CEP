@@ -1,37 +1,44 @@
-# from PyPDF2 import PdfFileReader,PdfFileWriter
-# path_input = PdfFileReader(open("test.pdf","rb"))
+#HTML to PDF
+#09.10.2019
+
+#Available formats
+#16:9 // Beamer
+#4:3 //  Beamer 
+#A4 //   Normal
+
+#Libarys
+from Html2Pdf import pisa as htmlconv #HTMlConverter
+
+#Grab the Data
 
 
+path_html = open("index.html","r") #read only
+html_source = path_html.read()     #extract the HTMl data in a String
 
-# print(path_input.getPage(0).mediaBox)
 
-# watermarker.py
-from PyPDF2 import PdfFileWriter, PdfFileReader
+output_name = "final.pdf"           
+output_path ="C:/Users/Dominik\Documents/CEP/CEP/HTML to PDF/teeest/"
+output_path_name = output_path+output_name
 
-def watermark(input_pdf, output_pdf, watermark_pdf):
-    watermark = PdfFileReader(watermark_pdf)
-    watermark_page = watermark.getPage(0)
 
-    pdf = PdfFileReader(input_pdf)
+class HTMLconv_error():             #class for errors
+    def htmlconv_path_error():
+        if output_path == "":
+            print("no filepath, the file will create in the local path")
 
-    pdf_writer = PdfFileWriter()
 
-    for page in range(pdf.getNumPages()):
-        pdf_page = pdf.getPage(page)
+def convertHTMLtoPDF(html_source, output_path_name):
+    result_pdf_file = open(output_path_name, "w+b")   #open/create ouptutfile to write in it
+    #convert HTML to PDF                                               
+    htmlconvStatus = htmlconv.CreatePDF(html_source, #the HTML to convert e.g index.html
+    dest=result_pdf_file)                            #dest = destination // outputfile
+    result_pdf_file.close()                          #close after writing the HTML in it
+    return htmlconvStatus.err
 
-        pdf_page.scaleTo(1600,900)
-        
-        pdf_page.mergePage(watermark_page)
-        pdf_writer.addPage(pdf_page)
+# Main program
+if __name__ == "__main__":
+    htmlconv.showLogging()
+    convertHTMLtoPDF(html_source,output_path_name)
+    HTMLconv_error.htmlconv_path_error()
 
-    with open(output_pdf, 'wb') as fh:
-        pdf_writer.write(fh)
 
-def renew_pdf(input_name,output_name):
-    #input_name = 
-    pass
-
-if __name__ == '__main__':
-    watermark(input_pdf='test.pdf', 
-              output_pdf='empty1.pdf',
-              watermark_pdf='empty.pdf')
