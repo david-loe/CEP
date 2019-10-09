@@ -26,7 +26,10 @@ with tag('html'):
                 for day in eventDaysList:
                     with tag('div',klass= 'col',  width = '30%'):
                         for event in day:
-                            text(event.summary)
+                            with tag('h3'):
+                                text(event.summary)
+                            with tag('p'):
+                                text(event.start.strftime('%H:%M') + ' - ' + event.end.strftime('%H:%M'))
 
 
 file = open('index.HTML', 'w')
