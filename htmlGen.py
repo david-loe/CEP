@@ -20,15 +20,17 @@ with tag('html'):
         doc.asis('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">')
     with tag('body'):
         with tag('div', klass='container'):
-            with tag('h1', align = "center"):
+            with tag('h1', align = 'center'):
                 text('Terminübersicht')
             with tag('div', klass='row justify-content-around'):
                 for day in eventDaysList:
-                    with tag('div',klass= 'col',  width = '30%'):
+                    with tag('div',klass= 'col'):
+                        with tag('h3'):
+                            text(set.weekdays[day[0].start.weekday()])
                         for event in day:
-                            with tag('h3'):
+                            with tag('h5'):
                                 text(event.summary)
-                            with tag('p'):
+                            with tag('p', align='center'):
                                 text(event.start.strftime('%H:%M') + ' - ' + event.end.strftime('%H:%M'))
 
 
