@@ -17,7 +17,7 @@ html_source = path_html.read()     #extract the HTMl data in a String
 
 
 output_name = "final.pdf"           
-output_path ="C:/Users/Dominik\Documents/CEP/CEP/HTML to PDF/teeest/"
+output_path ="teeest/"
 output_path_name = output_path+output_name
 
 
