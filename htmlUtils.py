@@ -23,7 +23,10 @@ def getUnicodeClock(time):
     else:
         byte = one_half
 
+    
     offsetHours =  ((time.hour % 12) - 1)
+    if offsetHours == -1:
+        offsetHours = 11
 
     return chr(byte + offsetHours)
 
