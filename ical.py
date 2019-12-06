@@ -1,22 +1,28 @@
-from dateutil.parser import *
-from datetime import *
+from datetime import datetime
 from icalevents.icalevents import events
 from settings import Settings as set
-from timezone import *
+from timezone import normalizeTimezone, getTimezone
 
 def getEventList(start = datetime.today() + set.staringpoint, end = datetime.today() + set.day_range):
     """
     Generates a List of all Events in a given Timeframe.
     The List is sorted like: [day][event]
-
-   :param datetime start: start of timeframe
-   :param datetime end: end of timeframe
-   :return: eventDaysList
-   :rtype: list
-   """
+    
+    ...
+    Parameters
+    ----------
+    start : datetime
+        start of timeframe
+    end : datetime
+        end of timeframe
+    Returns
+    --------
+    eventDaysList : list
+        The list of all Events in the timeframe, sorted like: [day][event]
+    """
     today = datetime.today()
     #
-    icalEvents  = events(url = set.path_calendar, start = start, end = end)
+    icalEvents  = events(file = "basic.ics", start = start, end = end) #url = set.path_calendar
     
     #fix TimeZone Bug
     for event in icalEvents:

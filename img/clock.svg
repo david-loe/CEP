@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="60px" height="60px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 60 60">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#1F1A17;stroke-width:2.25776}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Ebene_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <circle class="fil0 str0" cx="29.7015" cy="30.4241" r="20.2994"/>
+  <line class="fil0 str0" x1="29.7014" y1="16.6922" x2="29.7014" y2= "30.4242" />
+  <line class="fil0 str0" x1="29.7014" y1="30.4242" x2="43.4334" y2= "30.4242" />
+  <polyline class="fil0 str0" points="29.7015,16.6922 29.7015,30.4241 43.4334,30.4241 "/>
+ </g>
+</svg>

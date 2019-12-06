@@ -1,5 +1,6 @@
-from dateutil.relativedelta import *
-from datetime import *
+from dateutil.relativedelta import relativedelta
+from dateutil.rrule import SU
+from datetime import tzinfo, timedelta
 
 class CEST(tzinfo):
      def utcoffset(self, dt):
@@ -21,10 +22,17 @@ def getTimezone(date):
     """
     Returns the timezone of a date
 
-   :param datetime date: The date to check
-   :return: timezone 
-   :rtype: tzinfo
-   """
+    ...
+    Parameters
+    ----------
+    datetime : date
+        The date to check
+    
+    Returns
+    -------
+    datetime.tzinfo
+        timezone
+    """
     last_SU_march = date + relativedelta(month=3,day=31,hour=2,minute=0,second=0, weekday=SU(-1))
     last_SU_oct = date + relativedelta(month=10,day=31,hour=3,minute=0,second=0, weekday=SU(-1))
     if (date < last_SU_march) or (date > last_SU_oct):
@@ -36,11 +44,20 @@ def normalizeTimezone(date,timezone):
     """
     Normalizes the timezone of the event
 
-   :param datetime date: The date to normalize
-   :param tzinfo timezone: The timezone to normalize to
-   :return: normalized Datetime
-   :rtype: datetime
-   """
+    ...
+    Parameters
+    ---------
+    datetime : date
+        The date to normalize
+    tzinfo : timezone
+        The timezone to normalize to
+
+    Returns
+    -------
+    datetime
+        normalized Datetime
+    
+    """
     if date.tzinfo.tzname(date) == "UTC":
         date = date.replace(tzinfo=timezone)
         date = date + timezone.utcoffset(date)
