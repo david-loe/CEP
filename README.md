@@ -7,3 +7,4 @@ Needed Packages:
 - icalevents
 - weasyprint
 - yattag
+- kivy (for GUI)
