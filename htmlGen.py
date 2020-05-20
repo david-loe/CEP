@@ -18,7 +18,7 @@ with tag('html'):
     with tag('body'):
         with tag('div', klass='container'):
             # Headline
-            with tag('div', klass='row justify-content-center'):
+            with tag('div', klass='row justify-content-center mb-5'):
                 with tag('div', klass='col-auto'):
                     with tag('h1'):
                         text(set.text_title)
@@ -44,7 +44,7 @@ with tag('html'):
                                     with tag('h3', klass='card-title text-center'):
                                         text(event.summary)
                                     with tag('h4', klass='card-text text-center'):
-                                        text(getUnicodeClock(event.start) + ' ' + event.start.strftime('%H:%M') + 'Uhr')
+                                        text(getUnicodeClock(event.start) + ' ' + event.start.strftime('%H:%M') + ' Uhr')
                         doc.asis('<br>') 
                                     
 

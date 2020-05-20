@@ -51,6 +51,6 @@ class Settings:
     path_htmlOutput = "index.HTML"
     path_output = ""
     name_output = "Terminuebersicht"
-    text_title = "Terminübersicht" # Title of the Event Presentation
+    text_title = "Wochenübersicht" # Title of the Event Presentation
 
 
