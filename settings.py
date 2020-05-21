@@ -36,6 +36,10 @@ class Settings:
         name of the output files (without file extention)
     text_title : str
         Title of the Event Presentation
+    body_style : str
+        Style of the HTML body
+    heading_style : str
+        Style of the Heading
     
     """
     path_calendar = "https://calendar.google.com/calendar/ical/jcg.stadtoldendorf%40gmail.com/public/basic.ics" # path to ICS-File of your calendar
@@ -52,5 +56,7 @@ class Settings:
     path_output = ""
     name_output = "Terminuebersicht"
     text_title = "Wochenübersicht" # Title of the Event Presentation
+    body_style = "bg-dark"
+    heading_style = "text-white"
 
 

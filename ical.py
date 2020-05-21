@@ -22,7 +22,7 @@ def getEventList(start = datetime.today() + set.staringpoint, end = datetime.tod
     """
     today = datetime.today()
     #
-    icalEvents  = events(file = "basic.ics", start = start, end = end) #url = set.path_calendar
+    icalEvents  = events(url = set.path_calendar, start = start, end = end)
     
     #fix TimeZone Bug
     for event in icalEvents:

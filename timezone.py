@@ -58,7 +58,10 @@ def normalizeTimezone(date,timezone):
         normalized Datetime
     
     """
-    if date.tzinfo.tzname(date) == "UTC":
+    if (date.tzinfo == None):
+        date = date.replace(tzinfo=timezone)
+    elif (date.tzinfo.tzname(date) == "UTC"):
         date = date.replace(tzinfo=timezone)
         date = date + timezone.utcoffset(date)
+
     return date
