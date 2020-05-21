@@ -7,8 +7,6 @@ pdfName = set.name_output + '.pdf'
 
 font = FontConfiguration()
 html = HTML(filename=set.path_htmlOutput)
-#css_grid = CSS(filename='bootstrap-grid.css', font_config=font)
-#css_bootstrap = CSS(filename='bootstrap.css', font_config=font)
 css_page = CSS(string='@page {size: ' + pdfsize[0] + ' ' + pdfsize[1] + '; margin = 0cm;}', font_config=font)
 
 

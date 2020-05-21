@@ -29,9 +29,9 @@ with tag('html'):
                         with tag('div', klass='card', style='display: block; width: 100%'):
                             with tag('div', klass='card-header'):
                                 with tag('h2', klass='text-nowrap'):
-                                    with tag('span', klass='float-left'):
+                                    with tag('span', klass='float-left'): # float makes problems with pdf
                                         text(set.weekdays[day[0].start.weekday()])
-                                    with tag('span', klass='float-right font-weight-light'):
+                                    with tag('span', klass='float-right font-weight-light'): # float makes problems with pdf
                                         text(day[0].start.strftime('%d.%m'))
                                     doc.asis('<br>')
                             with tag('div', klass='card-body'):
@@ -43,8 +43,9 @@ with tag('html'):
                                         first = False
                                     with tag('h3', klass='card-title text-center font-weight-bold'):
                                         text(event.summary)
-                                    with tag('h4', klass='card-text text-center'):
-                                        text(getUnicodeClock(event.start) + ' ' + event.start.strftime('%H:%M') + ' Uhr')
+                                    if not event.all_day:
+                                        with tag('h4', klass='card-text text-center'):
+                                            text(getUnicodeClock(event.start) + ' ' + event.start.strftime('%H:%M') + ' Uhr')
                         doc.asis('<br>') 
                                     
 
