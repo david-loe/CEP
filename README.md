@@ -4,7 +4,7 @@ Chruch Event Presenter
 Needed Packages:
 - icalevents
 - weasyprint
-- [GTK] for weasyprint (https://weasyprint.readthedocs.io/en/stable/install.html)
+- [GTK](https://weasyprint.readthedocs.io/en/stable/install.html) for weasyprint
 - yattag
 
 
