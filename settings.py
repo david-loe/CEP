@@ -42,7 +42,7 @@ class Settings:
         Style of the Heading
     
     """
-    path_calendar = "https://calendar.google.com/calendar/ical/jcg.stadtoldendorf%40gmail.com/public/basic.ics" # path to ICS-File of your calendar
+    path_calendar = "" # URL to ICS-File of your calendar
     day_range = relativedelta(months=0, days=7) # timerange covered by the Event Presentation
     staringpoint = relativedelta(months=0, days=0, hours=2, minutes=0) # time from where on to look for events (today + startingpoint)
     weekdays = ["Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag","Sonntag"]
